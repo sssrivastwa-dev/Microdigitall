@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import image1 from '../assets/1.N.png';
+import image2 from '../assets/2.N.png';
+import image3 from '../assets/3.N.png';
+import image4 from '../assets/4.N.png';
+import image5 from '../assets/5.N.png';
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,11 +30,11 @@ export default function AboutPage() {
 
   // Image slider for Our Story section
   const storyImages = [
-    "/src/assets/1.N.png",
-    "/src/assets/2.N.png", 
-    "/src/assets/3.N.png",
-    "/src/assets/4.N.png",
-    "/src/assets/5.N.png"
+    image1,
+    image2, 
+    image3,
+    image4,
+    image5
   ];
 
   // Auto-slide images every 3 seconds

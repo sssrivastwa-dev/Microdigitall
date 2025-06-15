@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
-
-// Add base URL for backend
-const API_BASE_URL = 'http://localhost:5000';
 
 interface FormData {
   name: string;
@@ -23,6 +19,7 @@ const ContactPage: React.FC = () => {
     message: '',
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Scroll to top when component mounts
@@ -32,15 +29,15 @@ const ContactPage: React.FC = () => {
 
   // Contact information
   const contactInfo = {
-    address: "123 Tech Avenue, Silicon Valley, CA 94025",
-    phone: "+1 (555) 123-4567",
-    email: "contact@microdigitall.com",
+    address: "T-02, A-44 VDS Tower Sec-02 Near Sector-15 Metro Station",
+    phone: "+91 8318891438",
+    email: "info@microdigitall.com",
     hours: "Monday - Friday: 9:00 AM - 6:00 PM"
   };
 
   // Service images for slider
   const images = [
-    "https://i.pinimg.com/originals/61/44/2f/61442f2241fc5abce9a83f053b0b904a.gif", // Replace with actual image paths
+    "https://i.pinimg.com/originals/61/44/2f/61442f2241fc5abce9a83f053b0b904a.gif",
     "https://cdn.dribbble.com/userupload/24390689/file/original-3f13cebc70b575018ccbb750588394bc.gif",
     "https://i.pinimg.com/originals/c7/c6/f7/c7c6f7e8b3506ea46261ab7b55fc9faf.gif",
     "https://images.fonearena.com/blog/wp-content/uploads/2023/09/Meta-AI-Generative-Features.gif",
@@ -65,14 +62,30 @@ const ContactPage: React.FC = () => {
     });
   };
 
-  // Handle form submission
+  // Handle form submission using Formspree
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/contact`, formData);
-      console.log('Form submitted successfully:', response.data);
-      setFormSubmitted(true);
+      // Create email body with form data
+      const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+      `;
       
+      // Create mailto link
+      const mailtoLink = `mailto:${contactInfo.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open default email client
+      window.open(mailtoLink, '_blank');
+      
+      setFormSubmitted(true);
       // Reset form after submission
       setFormData({
         name: '',
@@ -81,10 +94,11 @@ const ContactPage: React.FC = () => {
         subject: '',
         message: '',
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error submitting form:', error);
-      const errorMessage = error.response?.data?.error || 'Failed to send message. Please try again later.';
-      alert(errorMessage);
+      alert('Failed to send message. Please try again later or contact us directly at info@microdigitall.com');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -267,12 +281,27 @@ const ContactPage: React.FC = () => {
                 
                 <div>
                   <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform"
+                    disabled={isSubmitting}
+                    className={`w-full font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out transform ${
+                      isSubmitting 
+                        ? 'bg-gray-600 cursor-not-allowed' 
+                        : 'bg-blue-600 hover:bg-blue-700'
+                    } text-white`}
                   >
-                    Send Message
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </div>
+                    ) : (
+                      'Send Message'
+                    )}
                   </motion.button>
                 </div>
               </form>
