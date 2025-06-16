@@ -180,22 +180,79 @@ const services = [
   }
 ];
   
-  // Testimonial data
+  // Updated Testimonial data with Indian names and more testimonials
   const testimonials = [
     {
       quote: "MicroDigitall transformed our digital infrastructure completely. Their team's expertise saved us countless hours and resources.",
-      author: "Sarah Johnson",
-      position: "CTO, GrowthTech Inc."
+      author: "Priya Sharma",
+      position: "CTO, TechVision Solutions",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
     },
     {
       quote: "The custom software solution provided by MicroDigitall increased our operational efficiency by 40%. Extremely satisfied!",
-      author: "Michael Chen",
-      position: "Operations Director, NexGen Systems"
+      author: "Rajesh Kumar",
+      position: "Operations Director, InnovatePlus Systems",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
       quote: "Their mobile app development services exceeded our expectations. The app is intuitive, fast, and our users love it!",
-      author: "Alex Rodriguez",
-      position: "Product Manager, InnovateTech"
+      author: "Ananya Patel",
+      position: "Product Manager, DigitalCraft Ltd",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "Outstanding web development work! Our e-commerce platform now handles 10x more traffic seamlessly. Highly recommended!",
+      author: "Vikram Singh",
+      position: "Founder & CEO, ShopEase India",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "The AI integration they provided revolutionized our customer service. Response time improved by 60% and customer satisfaction soared.",
+      author: "Kavya Reddy",
+      position: "Head of Technology, ServicePro Solutions",
+      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "MicroDigitall's cloud migration services were flawless. Zero downtime and significant cost savings. Professional team with deep expertise.",
+      author: "Arjun Mehta",
+      position: "IT Director, CloudFirst Enterprises",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "Their data analytics dashboard transformed how we make business decisions. Real-time insights have been a game-changer for us.",
+      author: "Sneha Gupta",
+      position: "Business Intelligence Manager, DataDriven Corp",
+      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "Exceptional cybersecurity implementation. Our systems are now fortress-level secure. The team's attention to detail is remarkable.",
+      author: "Rohit Jain",
+      position: "CISO, SecureNet Technologies",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "The blockchain solution they developed for us is cutting-edge. It's improved our supply chain transparency by 100%.",
+      author: "Pooja Agarwal",
+      position: "Supply Chain Director, LogiChain India",
+      image: "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "Amazing IoT implementation! Our smart manufacturing setup is now 35% more efficient. Top-notch technical expertise.",
+      author: "Amit Verma",
+      position: "Plant Manager, SmartManufacturing Ltd",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "Their digital marketing automation platform boosted our lead generation by 250%. Incredible ROI and ongoing support.",
+      author: "Divya Nair",
+      position: "Marketing Head, GrowthHackers India",
+      image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      quote: "The fintech solution developed by MicroDigitall is robust and user-friendly. Our customer onboarding time reduced by 70%.",
+      author: "Karthik Krishnan",
+      position: "Product Lead, FinanceForward Solutions",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
     }
   ];
 
@@ -677,108 +734,10 @@ const services = [
         className="flex gap-6"
         style={{
           width: 'fit-content',
-          animation: 'scroll 60s linear infinite'
+          animation: 'scroll 25s linear infinite'
         }}
       >
-        {/* First set of testimonials */}
-        {[
-          {
-            quote: "This team transformed our digital presence completely. Our sales increased by 300% within 6 months!",
-            author: "Sarah Johnson",
-            position: "CEO, TechStart Inc.",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Outstanding service and incredible attention to detail. They delivered exactly what we envisioned.",
-            author: "Michael Chen",
-            position: "Founder, InnovateLab",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Professional, reliable, and results-driven. Best investment we've made for our business.",
-            author: "Emily Rodriguez",
-            position: "Marketing Director, GrowthCo",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "The ROI on our project exceeded all expectations. Highly recommend their services!",
-            author: "David Thompson",
-            position: "CTO, DataFlow Systems",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Exceptional creativity and technical expertise. They brought our vision to life perfectly.",
-            author: "Lisa Wang",
-            position: "Creative Director, DesignHub",
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Fast delivery, excellent communication, and outstanding results. Couldn't be happier!",
-            author: "James Miller",
-            position: "VP Operations, ScaleTech",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "They understood our needs perfectly and delivered beyond expectations. Amazing team!",
-            author: "Sofia Andersson",
-            position: "Product Manager, NextGen",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Innovative solutions and flawless execution. Our conversion rates doubled overnight!",
-            author: "Robert Kim",
-            position: "E-commerce Director, ShopMax",
-            image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Professional service from start to finish. They made the complex seem simple.",
-            author: "Rachel Green",
-            position: "Startup Founder, EcoTech",
-            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Game-changing results! Our online presence has never looked better.",
-            author: "Alex Rivera",
-            position: "Brand Manager, StyleCorp",
-            image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Incredible attention to detail and user experience. Our customers love the new platform!",
-            author: "Jennifer Lee",
-            position: "UX Lead, UserFirst",
-            image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "They delivered on time, on budget, and exceeded quality expectations. Fantastic work!",
-            author: "Mark Stevens",
-            position: "Project Director, BuildRight",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Strategic thinking combined with technical excellence. Perfect partnership for growth!",
-            author: "Anna Kowalski",
-            position: "Growth Hacker, RapidScale",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Outstanding results and exceptional service. They truly care about client success.",
-            author: "Tom Wilson",
-            position: "Business Owner, LocalPro",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Transformed our digital strategy completely. Revenue increased by 250% in 4 months!",
-            author: "Maria Santos",
-            position: "CEO, HealthTech Solutions",
-            image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Best decision we made for our business. Professional, creative, and results-oriented!",
-            author: "Chris Anderson",
-            position: "Founder, FutureVision",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-          }
-        ].map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <div
             key={index}
             className="flex-shrink-0 w-80 bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl border border-blue-900/30 hover:border-blue-700/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/20"
@@ -788,6 +747,9 @@ const services = [
                 src={testimonial.image}
                 alt={testimonial.author}
                 className="w-12 h-12 rounded-full object-cover border-2 border-blue-400/30 mr-3"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(testimonial.author) + '&background=0D9488&color=fff';
+                }}
               />
               <MessageSquare className="text-blue-400 h-6 w-6 opacity-50 ml-auto" />
             </div>
@@ -800,106 +762,7 @@ const services = [
             </div>
           </div>
         ))}
-        
-        {/* Duplicate set for seamless loop */}
-        {[
-          {
-            quote: "This team transformed our digital presence completely. Our sales increased by 300% within 6 months!",
-            author: "Sarah Johnson",
-            position: "CEO, TechStart Inc.",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Outstanding service and incredible attention to detail. They delivered exactly what we envisioned.",
-            author: "Michael Chen",
-            position: "Founder, InnovateLab",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Professional, reliable, and results-driven. Best investment we've made for our business.",
-            author: "Emily Rodriguez",
-            position: "Marketing Director, GrowthCo",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "The ROI on our project exceeded all expectations. Highly recommend their services!",
-            author: "David Thompson",
-            position: "CTO, DataFlow Systems",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Exceptional creativity and technical expertise. They brought our vision to life perfectly.",
-            author: "Lisa Wang",
-            position: "Creative Director, DesignHub",
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Fast delivery, excellent communication, and outstanding results. Couldn't be happier!",
-            author: "James Miller",
-            position: "VP Operations, ScaleTech",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "They understood our needs perfectly and delivered beyond expectations. Amazing team!",
-            author: "Sofia Andersson",
-            position: "Product Manager, NextGen",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Innovative solutions and flawless execution. Our conversion rates doubled overnight!",
-            author: "Robert Kim",
-            position: "E-commerce Director, ShopMax",
-            image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Professional service from start to finish. They made the complex seem simple.",
-            author: "Rachel Green",
-            position: "Startup Founder, EcoTech",
-            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Game-changing results! Our online presence has never looked better.",
-            author: "Alex Rivera",
-            position: "Brand Manager, StyleCorp",
-            image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Incredible attention to detail and user experience. Our customers love the new platform!",
-            author: "Jennifer Lee",
-            position: "UX Lead, UserFirst",
-            image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "They delivered on time, on budget, and exceeded quality expectations. Fantastic work!",
-            author: "Mark Stevens",
-            position: "Project Director, BuildRight",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Strategic thinking combined with technical excellence. Perfect partnership for growth!",
-            author: "Anna Kowalski",
-            position: "Growth Hacker, RapidScale",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Outstanding results and exceptional service. They truly care about client success.",
-            author: "Tom Wilson",
-            position: "Business Owner, LocalPro",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Transformed our digital strategy completely. Revenue increased by 250% in 4 months!",
-            author: "Maria Santos",
-            position: "CEO, HealthTech Solutions",
-            image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150&h=150&fit=crop&crop=face"
-          },
-          {
-            quote: "Best decision we made for our business. Professional, creative, and results-oriented!",
-            author: "Chris Anderson",
-            position: "Founder, FutureVision",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-          }
-        ].map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <div
             key={`duplicate-${index}`}
             className="flex-shrink-0 w-80 bg-gradient-to-br from-gray-900 to-gray-950 p-6 rounded-xl border border-blue-900/30 hover:border-blue-700/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/20"
@@ -909,6 +772,9 @@ const services = [
                 src={testimonial.image}
                 alt={testimonial.author}
                 className="w-12 h-12 rounded-full object-cover border-2 border-blue-400/30 mr-3"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(testimonial.author) + '&background=0D9488&color=fff';
+                }}
               />
               <MessageSquare className="text-blue-400 h-6 w-6 opacity-50 ml-auto" />
             </div>
