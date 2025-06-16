@@ -62,13 +62,47 @@ const ContactPage: React.FC = () => {
     });
   };
 
-  // Handle form submission using Formspree
+  // Handle form submission using FormSubmit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // Create email body with form data
+      // Using FormSubmit service - this will send emails directly to info@microdigitall.com
+      const formEndpoint = "https://formsubmit.co/info@microdigitall.com";
+      
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('_subject', `New Contact Form Submission: ${formData.subject}`);
+      formDataToSend.append('_next', window.location.href);
+      formDataToSend.append('_captcha', 'false'); // Disable captcha for better UX
+
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        // Reset form after submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // Fallback to email client if FormSubmit fails
       const emailBody = `
 Name: ${formData.name}
 Email: ${formData.email}
@@ -79,14 +113,10 @@ Message:
 ${formData.message}
       `;
       
-      // Create mailto link
       const mailtoLink = `mailto:${contactInfo.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
-      
-      // Open default email client
       window.open(mailtoLink, '_blank');
       
       setFormSubmitted(true);
-      // Reset form after submission
       setFormData({
         name: '',
         email: '',
@@ -94,9 +124,6 @@ ${formData.message}
         subject: '',
         message: '',
       });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Failed to send message. Please try again later or contact us directly at info@microdigitall.com');
     } finally {
       setIsSubmitting(false);
     }
