@@ -31,7 +31,7 @@ const ContactPage: React.FC = () => {
   const contactInfo = {
     address: "T-02, A-44 VDS Tower Sec-02 Near Sector-15 Metro Station",
     phone: "+91 8318891438",
-    email: "info@microdigitall.com",
+    email: "jhamonty302@gmail.com",
     hours: "Monday - Friday: 9:00 AM - 6:00 PM"
   };
 
@@ -68,8 +68,8 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Using FormSubmit service - this will send emails directly to info@microdigitall.com
-      const formEndpoint = "https://formsubmit.co/info@microdigitall.com";
+      // Using FormSubmit service - this will send emails directly to jhamonty302@gmail.com
+      const formEndpoint = "https://formsubmit.co/jhamonty302@gmail.com";
       
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
