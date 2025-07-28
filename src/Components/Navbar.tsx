@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { LayoutGrid, Cloud, Brain, Glasses, Monitor, Menu, X, ChevronDown } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/micrologo2.png';
 
 // Menu Item Component
 const MenuItem = ({ label, icon, href, onClose, delay, hasDropdown, onClick }) => {

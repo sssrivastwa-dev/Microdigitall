@@ -9,7 +9,7 @@ import {
   MapPin,
   ChevronDown,
 } from "lucide-react";
-import logo1 from '../assets/logo1.png';
+import logo1 from '../assets/Logo4.png';
 
 const Footer: FC = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
